@@ -14,13 +14,7 @@ In the future, I want this program to actually send emails to each of the Secret
 Santa's, informing them who they have rolled. For now, it will just be collecting
 everyone's data and will show who will get who with their data shown.
 '''
-
-#test comment
-
 import random
-import data
-import smtplib
-from email.message import EmailMessage
 
 def randomize(numPeople):
     """
@@ -82,22 +76,6 @@ def send(names, emails, addresses, receivers):
         print(f'{names[i]:20}{emails[i]:25}{"--->":10}{names[element]:20}{addresses[element]}')
         i += 1
     print('~' * 95)
-
-def email(names, emails, receivers):
-    i = 0
-    for element in receivers:
-        msg = EmailMessage()
-        msg['Subject'] = f'Secret Santa for: {names[i]}'
-        msg['From'] = data.SENDER_EMAIL
-        msg['To'] = f'{emails[element]}'
-        msg.set_content(f'SECRET SANTA! {names[i]} you have gotten...')
-
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-            smtp.login(data.SENDER_EMAIL, data.SENDER_PASSWORD)
-            smtp.send_message(msg)
-            
-        i += 1
-
 
 if __name__ == "__main__":
     # Lists to hold the 3 types of data (names, emails, and addresses).
