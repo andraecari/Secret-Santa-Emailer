@@ -13,6 +13,8 @@ In the perspective of a game master, use Python to draw these names autonomously
 In the future, I want this program to actually send emails to each of the Secret
 Santa's, informing them who they have rolled. For now, it will just be collecting
 everyone's data and will show who will get who with their data shown.
+
+Assignment 1 for CPS109.
 '''
 import random
 
