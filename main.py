@@ -9,6 +9,11 @@ import data
 import smtplib
 from email.message import EmailMessage
 
+"""
+this is a test lol... im trying to figure out how to use github
+
+"""
+
 def randomize(numPeople):
     """
     Takes in the number of people, and generates a new list of random and unique indexes of the size of people.
